@@ -7,9 +7,17 @@ module.exports = function (source) {
   const data = JSON.parse(source)
 
   let keys = Object.keys(data).filter((key) => !key.startsWith('_'))
-  if (options && options.only !== undefined) keys = arrify(options.only)
+
+  if(options) {
+    if (options.only !== undefined) keys = arrify(options.only)
+
+    if (options.except !== undefined && options.only === undefined){
+      keys = Object.keys(data).filter((key) => !options.except.some(e => e === key))
+    }
+  }
 
   const result = {}
   for (let key of keys) result[key] = data[key]
+
   return JSON.stringify(result, null, 2)
 }
