@@ -10,3 +10,4 @@ node_modules/
 result.xml
 npm-debug.log
 yarn-error.log
+.nvmrc
