@@ -39,9 +39,9 @@ $ cat ./node_modules/browserify/package.json  | grep _
 
 This package by default removes all values for which keys start with `_` or the values passed in options.
 
-* options
-  * `only`: removes all values and keeps only the keys declared within the array of this option.
-  * `except`: keeps all values except the keys declared within the array of this option.
+- options
+  - `only`: removes all values and keeps only the keys declared within the array of this option.
+  - `except`: keeps all values except the keys declared within the array of this option.
 
 **Please note:** Options are not concurrent. The predominate option is defined in this order: `only`, `exception`, and `default`.
 
@@ -68,12 +68,12 @@ module.exports = {
       {
         test: /package\.json$/,
         use: {
-          loader: 'package-json-remove-key'
+          loader: "package-json-remove-key"
         }
       }
     ]
   }
-}
+};
 ```
 
 `only` option:
@@ -85,15 +85,15 @@ module.exports = {
       {
         test: /package\.json$/,
         use: {
-        loader: 'package-json-remove-key',
-        options: {
-            only: ['version', 'name', 'otherParam']
+          loader: "package-json-remove-key",
+          options: {
+            only: ["version", "name", "otherParam"]
           }
         }
       }
     ]
   }
-}
+};
 ```
 
 `except` option:
@@ -105,15 +105,15 @@ module.exports = {
       {
         test: /package\.json$/,
         use: {
-        loader: 'package-json-remove-key',
-        options: {
-            except: ['_where', '_resolved', 'otherParam']
+          loader: "package-json-remove-key",
+          options: {
+            except: ["_where", "_resolved", "otherParam"]
           }
         }
       }
     ]
   }
-}
+};
 ```
 
 **Warning:** If the error message `You may need an appropriate loader to handle this file type` occurs during the bundle build process, it will be necessary to define in the webpack rules the package that will load the JSON files. Install the [json-loader][4] package and use the loading rule to the webpack configuration file:
