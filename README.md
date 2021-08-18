@@ -1,6 +1,6 @@
 ## Description
 
-> This module is a fork of Christoph von Gellhorn's [package-json-cleanup-loader][1] project
+> This module is a fork of Christoph von Gellhorn's [package-json-cleanup-loader][1] project. The `exception` option was added to the module, allowing to pass to the module an array of keys that can be removed from the JSON file.
 
 Did you know that when [webpack][2] includes `package.json` file in bundle this bundle can contain private information like installed module path?
 For example, lets install [browserify][3]:
