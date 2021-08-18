@@ -1,6 +1,6 @@
 {
   "name": "package-json-remove-key",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Remove not public values from package.json on webpacking",
   "homepage": "https://github.com/engmsilva/package-json-remove-key",
   "bugs": {

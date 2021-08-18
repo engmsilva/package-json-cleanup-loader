@@ -55,7 +55,7 @@ This package by default removes all values for which keys start with `_` or the 
 
 #### CLI
 
-`webpack --module-bind 'path/to/package.json=package-json-cleanup-loader'`
+`webpack --module-bind 'path/to/package.json=package-json-remove-key'`
 
 #### Change webpack config
 
