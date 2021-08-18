@@ -37,7 +37,7 @@ $ cat ./node_modules/browserify/package.json  | grep _
   }
 ```
 
-This package by default removes all values for which keys start with \_ or the values passed in options.
+This package by default removes all values for which keys start with `_` or the values passed in options.
 
 * options
   * `only`: removes all values and keeps only the keys declared within the array of this option.
