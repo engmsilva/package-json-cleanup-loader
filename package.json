@@ -1,20 +1,20 @@
 {
-  "name": "package-json-cleanup-loader",
-  "version": "1.0.3",
+  "name": "package-json-remove-key",
+  "version": "1.0.4",
   "description": "Remove not public values from package.json on webpacking",
-  "homepage": "https://github.com/headfire94/package-json-cleanup-loader",
+  "homepage": "https://github.com/engmsilva/package-json-remove-key",
   "bugs": {
-    "url": "https://github.com/headfire94/package-json-cleanup-loader/issues"
+    "url": "https://github.com/engmsilva/package-json-remove-key/issues"
   },
   "license": "MIT",
-  "author": "Egor Vodopyanov",
+  "author": "Marcelo Ribeiro da Silva",
   "files": [
     "index.js"
   ],
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/headfire94/package-json-cleanup-loader"
+    "url": "https://github.com/engmsilva/package-json-remove-key"
   },
   "scripts": {
     "lint": "standard",
