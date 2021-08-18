@@ -53,7 +53,7 @@ This package by default removes all values for which keys start with \_ or the v
 
 #### Change webpack config
 
-Default removal method:
+`default` method:
 
 ```javascript
 module.exports = {
@@ -70,7 +70,7 @@ module.exports = {
 }
 ```
 
-Only removal method:
+`only` method:
 
 ```javascript
 module.exports = {
@@ -90,7 +90,7 @@ module.exports = {
 }
 ```
 
-Except removal method:
+`except` method:
 
 ```javascript
 module.exports = {
