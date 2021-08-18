@@ -47,32 +47,13 @@ This package by default removes all values for which keys start with \_ or the v
 
 ### Usage
 
-**Please note:** If the error `You may need a suitable loader to handle this file type` occurs, it will be necessary to define in the webpack rules the package that will load the JSON files. Install the [json-loader][4] package and use the loading rule to the webpack configuration file:
-
-`npm install --save-dev json-loader`
-
-```javascript
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.json$/,
-        use: {
-          loader: "json-loader",
-        },
-      },
-    ],
-  },
-};
-```
-
 #### CLI
 
 `webpack --module-bind 'path/to/package.json=package-json-cleanup-loader'`
 
 #### Change webpack config
 
-**Default removal method**
+Default removal method:
 
 ```javascript
 module.exports = {
@@ -88,7 +69,8 @@ module.exports = {
   }
 }
 ```
-**Only removal method**
+
+Only removal method:
 
 ```javascript
 module.exports = {
@@ -108,7 +90,7 @@ module.exports = {
 }
 ```
 
-**Except removal method**
+Except removal method:
 
 ```javascript
 module.exports = {
@@ -126,6 +108,25 @@ module.exports = {
     ]
   }
 }
+```
+
+**Please note:** If the error message `You may need an appropriate loader to handle this file type` occurs during the bundle build process, it will be necessary to define in the webpack rules the package that will load the JSON files. Install the [json-loader][4] package and use the loading rule to the webpack configuration file:
+
+`npm install --save-dev json-loader`
+
+```javascript
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.json$/,
+        use: {
+          loader: "json-loader",
+        },
+      },
+    ],
+  },
+};
 ```
 
 ## License
