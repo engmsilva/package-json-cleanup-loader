@@ -1,6 +1,6 @@
 ## Description
 
-> This package is a fork of Christoph von Gellhorn's [package-json-cleanup-loader][1] project. The `exception` option was added to the module, allowing to pass to the package an array of keys that can be removed from the JSON file.
+> This package is a fork of Christoph von Gellhorn's [package-json-cleanup-loader][1] project. The `exception` option was added, allowing to pass to the package an array of keys that can be removed from the JSON file.
 
 Did you know that when [webpack][2] includes `package.json` file in bundle this bundle can contain private information like installed module path?
 For example, lets install [browserify][3]:
@@ -43,7 +43,7 @@ This package by default removes all values for which keys start with \_ or the v
 
 ### Installation
 
-`npm install --save-dev package-json-cleanup-loader`
+`npm install --save-dev package-json-remove-key`
 
 ### Usage
 
@@ -72,15 +72,55 @@ module.exports = {
 
 #### Change webpack config
 
+**Default removal method**
+
 ```javascript
 module.exports = {
   module: {
     rules: [
       {
         test: /package\.json$/,
-        loader: 'package-json-cleanup-loader',
+        use: {
+          loader: 'package-json-remove-key'
+        }
+      }
+    ]
+  }
+}
+```
+**Only removal method**
+
+```javascript
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /package\.json$/,
+        use: {
+        loader: 'package-json-remove-key',
         options: {
-          only: ['version', 'name', 'otherParam']
+            only: ['version', 'name', 'otherParam']
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+**Except removal method**
+
+```javascript
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /package\.json$/,
+        use: {
+        loader: 'package-json-remove-key',
+        options: {
+            except: ['_where', '_resolved', 'otherParam']
+          }
         }
       }
     ]
