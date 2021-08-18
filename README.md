@@ -39,6 +39,10 @@ $ cat ./node_modules/browserify/package.json  | grep _
 
 This package by default removes all values for which keys start with \_ or the values passed in options.
 
+* options
+  * `only` removes all values and keeps only the keys declared within the array of this option.
+  * `except` keeps all values except the keys declared within the array of this option.
+
 ## How I can use this package?
 
 ### Installation
@@ -53,7 +57,7 @@ This package by default removes all values for which keys start with \_ or the v
 
 #### Change webpack config
 
-`default` method:
+`default` option:
 
 ```javascript
 module.exports = {
@@ -70,7 +74,7 @@ module.exports = {
 }
 ```
 
-`only` method:
+`only` option:
 
 ```javascript
 module.exports = {
@@ -90,7 +94,7 @@ module.exports = {
 }
 ```
 
-`except` method:
+`except` option:
 
 ```javascript
 module.exports = {
