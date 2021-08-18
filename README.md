@@ -40,8 +40,10 @@ $ cat ./node_modules/browserify/package.json  | grep _
 This package by default removes all values for which keys start with \_ or the values passed in options.
 
 * options
-  * `only` removes all values and keeps only the keys declared within the array of this option.
-  * `except` keeps all values except the keys declared within the array of this option.
+  * `only`: removes all values and keeps only the keys declared within the array of this option.
+  * `except`: keeps all values except the keys declared within the array of this option.
+
+Options are not concurrent. The predominate option is defined in this order: `only`, `exception`, and `default`.
 
 ## How I can use this package?
 
