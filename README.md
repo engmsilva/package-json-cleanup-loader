@@ -43,7 +43,7 @@ This package by default removes all values for which keys start with \_ or the v
   * `only`: removes all values and keeps only the keys declared within the array of this option.
   * `except`: keeps all values except the keys declared within the array of this option.
 
-Options are not concurrent. The predominate option is defined in this order: `only`, `exception`, and `default`.
+**Please note:** Options are not concurrent. The predominate option is defined in this order: `only`, `exception`, and `default`.
 
 ## How I can use this package?
 
@@ -116,7 +116,7 @@ module.exports = {
 }
 ```
 
-**Please note:** If the error message `You may need an appropriate loader to handle this file type` occurs during the bundle build process, it will be necessary to define in the webpack rules the package that will load the JSON files. Install the [json-loader][4] package and use the loading rule to the webpack configuration file:
+**Warning:** If the error message `You may need an appropriate loader to handle this file type` occurs during the bundle build process, it will be necessary to define in the webpack rules the package that will load the JSON files. Install the [json-loader][4] package and use the loading rule to the webpack configuration file:
 
 `npm install --save-dev json-loader`
 
