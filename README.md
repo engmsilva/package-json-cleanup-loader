@@ -1,10 +1,11 @@
 ## Description
 
-> This module is a fork of Christoph von Gellhorn's [package-json-cleanup-loader][1] project. The `exception` option was added to the module, allowing to pass to the module an array of keys that can be removed from the JSON file.
+> This package is a fork of Christoph von Gellhorn's [package-json-cleanup-loader][1] project. The `exception` option was added to the module, allowing to pass to the package an array of keys that can be removed from the JSON file.
 
 Did you know that when [webpack][2] includes `package.json` file in bundle this bundle can contain private information like installed module path?
 For example, lets install [browserify][3]:
-```
+
+```json
 $ npm install browserify
 ...
 $ cat ./node_modules/browserify/package.json  | grep _
@@ -36,21 +37,42 @@ $ cat ./node_modules/browserify/package.json  | grep _
   }
 ```
 
-This package remove all values for which keys starts with `_`  and with specific character that you can pass in options.
+This package by default removes all values for which keys start with \_ or the values passed in options.
 
 ## How I can use this package?
 
 ### Installation
-```npm i --save-dev package-json-cleanup-loader```
+
+`npm install --save-dev package-json-cleanup-loader`
 
 ### Usage
 
+**Please note:** If the error `You may need a suitable loader to handle this file type` occurs, it will be necessary to define in the webpack rules the package that will load the JSON files. Install the [json-loader][4] package and use the loading rule to the webpack configuration file:
+
+`npm install --save-dev json-loader`
+
+```javascript
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.json$/,
+        use: {
+          loader: "json-loader",
+        },
+      },
+    ],
+  },
+};
+```
+
 #### CLI
+
 `webpack --module-bind 'path/to/package.json=package-json-cleanup-loader'`
 
 #### Change webpack config
 
-```
+```javascript
 module.exports = {
   module: {
     rules: [
@@ -73,3 +95,4 @@ MIT
 [1]: https://github.com/engmsilva/package-json-remove-key
 [2]: https://github.com/webpack/webpack
 [3]: https://github.com/browserify/browserify
+[4]: https://github.com/webpack-contrib/json-loader
