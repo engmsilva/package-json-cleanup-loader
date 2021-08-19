@@ -116,7 +116,7 @@ module.exports = {
 };
 ```
 
-**Warning:** If the error message `You may need an appropriate loader to handle this file type` occurs during the bundle build process, it will be necessary to define in the webpack rules the package that will load the JSON files. Install the [json-loader][4] package and use the loading rule to the webpack configuration file:
+**Warning:** If the error message `"You may need an appropriate loader to handle this file type"` occurs during the bundle build process, it will be necessary to define in the webpack rules the package that will load the JSON files. Install the [json-loader][4] package and use the loading rule to the webpack configuration file:
 
 `npm install --save-dev json-loader`
 
@@ -139,7 +139,7 @@ module.exports = {
 
 MIT
 
-[1]: https://github.com/engmsilva/package-json-remove-key
+[1]: https://github.com/headfire94/package-json-cleanup-loader
 [2]: https://github.com/webpack/webpack
 [3]: https://github.com/browserify/browserify
 [4]: https://github.com/webpack-contrib/json-loader
